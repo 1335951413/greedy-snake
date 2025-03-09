@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人资料 - 社交贪吃蛇</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .profile-header {
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
+      padding: 30px 20px;
+      color: white;
+      border-radius: 0 0 30px 30px;
+    }
+
+    .stats-card {
+      background-color: white;
+      border-radius: 16px;
+      padding: 16px;
+      margin-top: -40px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .achievement {
+      background-color: white;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .achievement-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 16px;
+      color: #4CAF50;
+      font-size: 24px;
+    }
+
+    .achievement-info {
+      flex: 1;
+    }
+
+    .achievement-progress {
+      width: 100%;
+      height: 6px;
+      background-color: #f0f0f0;
+      border-radius: 3px;
+      margin-top: 8px;
+      overflow: hidden;
+    }
+
+    .achievement-bar {
+      height: 100%;
+      background-color: #4CAF50;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="iphone-container">
+    <!-- iOS状态栏 -->
+    <div class="ios-status-bar">
+      <div class="time">9:41</div>
+      <div class="right-icons">
+        <i class="fas fa-signal"></i>
+        <i class="fas fa-wifi"></i>
+        <i class="fas fa-battery-full"></i>
+      </div>
+    </div>
+
+    <div class="content-area overflow-y-auto">
+      <!-- 个人资料头部 -->
+      <div class="profile-header">
+        <div class="flex items-center">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="用户头像" class="avatar-lg mr-4">
+          <div>
+            <h1 class="text-2xl font-bold">小蛇王</h1>
+            <p class="text-sm opacity-80">ID: snake_master_888</p>
+            <div class="flex items-center mt-2">
+              <span class="bg-white bg-opacity-20 text-sm px-2 py-1 rounded-full mr-2">Lv.28</span>
+              <span class="bg-white bg-opacity-20 text-sm px-2 py-1 rounded-full">蛇王称号</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="mt-4 bg-white bg-opacity-20 w-full py-2 rounded-full">
+          <i class="fas fa-edit mr-2"></i>编辑个人资料
+        </button>
+      </div>
+
+      <!-- 游戏统计 -->
+      <div class="px-4">
+        <div class="stats-card">
+          <h2 class="text-lg font-bold mb-4">游戏统计</h2>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="text-center">
+              <div class="text-2xl font-bold text-green-600">1,245</div>
+              <div class="text-sm text-gray-500">最高分</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-green-600">632</div>
+              <div class="text-sm text-gray-500">平均分</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-green-600">128</div>
+              <div class="text-sm text-gray-500">游戏次数</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-green-600">24</div>
+              <div class="text-sm text-gray-500">全球排名</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-green-600">3</div>
+              <div class="text-sm text-gray-500">好友排名</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-green-600">12</div>
+              <div class="text-sm text-gray-500">获得成就</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 成就系统 -->
+      <div class="p-4">
+        <h2 class="text-lg font-bold mb-4">我的成就</h2>
+
+        <div class="achievement">
+          <div class="achievement-icon">
+            <i class="fas fa-crown"></i>
+          </div>
+          <div class="achievement-info">
+            <div class="flex justify-between">
+              <h3 class="font-semibold">蛇王称号</h3>
+              <span class="text-green-600">已获得</span>
+            </div>
+            <p class="text-sm text-gray-500">单局游戏得分超过1000分</p>
+            <div class="achievement-progress">
+              <div class="achievement-bar" style="width: 100%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="achievement">
+          <div class="achievement-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <div class="achievement-info">
+            <div class="flex justify-between">
+              <h3 class="font-semibold">闪电速度</h3>
+              <span class="text-green-600">已获得</span>
+            </div>
+            <p class="text-sm text-gray-500">在闪电模式中存活超过2分钟</p>
+            <div class="achievement-progress">
+              <div class="achievement-bar" style="width: 100%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="achievement">
+          <div class="achievement-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="achievement-info">
+            <div class="flex justify-between">
+              <h3 class="font-semibold">社交达人</h3>
+              <span class="text-gray-500">进行中</span>
+            </div>
+            <p class="text-sm text-gray-500">添加20个好友</p>
+            <div class="achievement-progress">
+              <div class="achievement-bar" style="width: 75%;"></div>
+            </div>
+            <div class="text-right text-xs text-gray-500 mt-1">15/20</div>
+          </div>
+        </div>
+
+        <div class="achievement">
+          <div class="achievement-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <div class="achievement-info">
+            <div class="flex justify-between">
+              <h3 class="font-semibold">排行榜冠军</h3>
+              <span class="text-gray-500">进行中</span>
+            </div>
+            <p class="text-sm text-gray-500">在全球排行榜中获得第一名</p>
+            <div class="achievement-progress">
+              <div class="achievement-bar" style="width: 0%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 最近游戏记录 -->
+      <div class="p-4">
+        <h2 class="text-lg font-bold mb-4">最近游戏</h2>
+
+        <div class="ios-list">
+          <div class="ios-list-item">
+            <div>
+              <h3 class="font-semibold">经典模式</h3>
+              <p class="text-xs text-gray-500">今天 14:30</p>
+            </div>
+            <div class="text-right">
+              <div class="text-lg font-bold text-green-600">876</div>
+              <p class="text-xs text-gray-500">得分</p>
+            </div>
+          </div>
+
+          <div class="ios-list-item">
+            <div>
+              <h3 class="font-semibold">闪电模式</h3>
+              <p class="text-xs text-gray-500">今天 12:15</p>
+            </div>
+            <div class="text-right">
+              <div class="text-lg font-bold text-green-600">632</div>
+              <p class="text-xs text-gray-500">得分</p>
+            </div>
+          </div>
+
+          <div class="ios-list-item">
+            <div>
+              <h3 class="font-semibold">经典模式</h3>
+              <p class="text-xs text-gray-500">昨天 18:45</p>
+            </div>
+            <div class="text-right">
+              <div class="text-lg font-bold text-green-600">1,245</div>
+              <p class="text-xs text-gray-500">得分</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- iOS底部导航栏 -->
+    <div class="ios-tab-bar">
+      <div class="tab-item">
+        <i class="fas fa-home"></i>
+        <span>首页</span>
+      </div>
+      <div class="tab-item">
+        <i class="fas fa-trophy"></i>
+        <span>排行榜</span>
+      </div>
+      <div class="tab-item">
+        <i class="fas fa-store"></i>
+        <span>商店</span>
+      </div>
+      <div class="tab-item">
+        <i class="fas fa-user-friends"></i>
+        <span>好友</span>
+      </div>
+      <div class="tab-item active">
+        <i class="fas fa-user"></i>
+        <span>我的</span>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

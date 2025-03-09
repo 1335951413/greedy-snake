@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商店 - 社交贪吃蛇</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .tab-button {
+      padding: 10px 15px;
+      font-weight: 600;
+      color: #666;
+      border-bottom: 2px solid transparent;
+    }
+
+    .tab-button.active {
+      color: #4CAF50;
+      border-bottom: 2px solid #4CAF50;
+    }
+
+    .store-item {
+      background-color: white;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .store-item-image {
+      width: 100%;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .store-item-content {
+      padding: 16px;
+    }
+
+    .coin-icon {
+      color: #FFD700;
+      margin-right: 4px;
+    }
+
+    .currency-display {
+      background-color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .featured-image {
+      height: 160px;
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .snake-icon {
+      position: absolute;
+      font-size: 80px;
+      opacity: 0.3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="iphone-container">
+    <!-- iOS状态栏 -->
+    <div class="ios-status-bar">
+      <div class="time">9:41</div>
+      <div class="right-icons">
+        <i class="fas fa-signal"></i>
+        <i class="fas fa-wifi"></i>
+        <i class="fas fa-battery-full"></i>
+      </div>
+    </div>
+
+    <div class="content-area">
+      <!-- 顶部标题和货币显示 -->
+      <div class="p-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">商店</h1>
+        <div class="currency-display">
+          <i class="fas fa-coins coin-icon"></i>
+          <span class="font-bold">2,450</span>
+        </div>
+      </div>
+
+      <!-- 商店选项卡 -->
+      <div class="flex border-b">
+        <button class="tab-button active flex-1">蛇皮肤</button>
+        <button class="tab-button flex-1">背景</button>
+        <button class="tab-button flex-1">特效</button>
+        <button class="tab-button flex-1">道具</button>
+      </div>
+
+      <!-- 商店列表 -->
+      <div class="p-4">
+        <!-- 精选商品 -->
+        <div class="mb-6">
+          <h2 class="text-lg font-bold mb-3">精选商品</h2>
+          <div class="store-item">
+            <div class="featured-image">
+              <i class="fas fa-snake snake-icon"></i>
+              霓虹蛇皮肤
+            </div>
+            <div class="store-item-content">
+              <div class="flex justify-between items-center mb-2">
+                <h3 class="text-lg font-bold">霓虹蛇皮肤</h3>
+                <div class="flex items-center">
+                  <i class="fas fa-coins coin-icon"></i>
+                  <span class="font-bold">1,200</span>
+                </div>
+              </div>
+              <p class="text-gray-600 text-sm mb-4">闪烁的霓虹效果，让你的蛇在黑暗中发光</p>
+              <button class="bg-green-500 text-white w-full py-2 rounded-xl font-semibold">
+                购买
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 蛇皮肤列表 -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="store-item">
+            <div class="store-item-image" style="background: linear-gradient(135deg, #FF5722, #E64A19);">
+              火焰蛇
+            </div>
+            <div class="store-item-content">
+              <div class="flex justify-between items-center mb-2">
+                <h3 class="font-bold">火焰蛇</h3>
+                <div class="flex items-center">
+                  <i class="fas fa-coins coin-icon"></i>
+                  <span class="font-bold">800</span>
+                </div>
+              </div>
+              <button class="bg-green-500 text-white w-full py-2 rounded-xl text-sm">
+                购买
+              </button>
+            </div>
+          </div>
+
+          <div class="store-item">
+            <div class="store-item-image" style="background: linear-gradient(135deg, #2196F3, #0D47A1);">
+              冰霜蛇
+            </div>
+            <div class="store-item-content">
+              <div class="flex justify-between items-center mb-2">
+                <h3 class="font-bold">冰霜蛇</h3>
+                <div class="flex items-center">
+                  <i class="fas fa-coins coin-icon"></i>
+                  <span class="font-bold">800</span>
+                </div>
+              </div>
+              <button class="bg-green-500 text-white w-full py-2 rounded-xl text-sm">
+                购买
+              </button>
+            </div>
+          </div>
+
+          <div class="store-item">
+            <div class="store-item-image" style="background: linear-gradient(135deg, #9C27B0, #6A1B9A);">
+              幽灵蛇
+            </div>
+            <div class="store-item-content">
+              <div class="flex justify-between items-center mb-2">
+                <h3 class="font-bold">幽灵蛇</h3>
+                <div class="flex items-center">
+                  <i class="fas fa-coins coin-icon"></i>
+                  <span class="font-bold">1,000</span>
+                </div>
+              </div>
+              <button class="bg-green-500 text-white w-full py-2 rounded-xl text-sm">
+                购买
+              </button>
+            </div>
+          </div>
+
+          <div class="store-item">
+            <div class="store-item-image" style="background: linear-gradient(135deg, #FFC107, #FF8F00);">
+              <i class="fas fa-crown" style="font-size: 24px; margin-right: 8px;"></i>
+              金蛇
+            </div>
+            <div class="store-item-content">
+              <div class="flex justify-between items-center mb-2">
+                <h3 class="font-bold">金蛇</h3>
+                <div class="flex items-center">
+                  <i class="fas fa-coins coin-icon"></i>
+                  <span class="font-bold">1,500</span>
+                </div>
+              </div>
+              <button class="bg-green-500 text-white w-full py-2 rounded-xl text-sm">
+                购买
+              </button>
+            </div>
+          </div>
+
+          <div class="store-item">
+            <div class="store-item-image" style="background: linear-gradient(135deg, #607D8B, #455A64);">
+              <i class="fas fa-cogs" style="font-size: 20px; margin-right: 8px;"></i>
+              机械蛇
+            </div>
+            <div class="store-item-content">
+              <div class="flex justify-between items-center mb-2">
+                <h3 class="font-bold">机械蛇</h3>
+                <div class="flex items-center">
+                  <i class="fas fa-coins coin-icon"></i>
+                  <span class="font-bold">1,200</span>
+                </div>
+              </div>
+              <button class="bg-green-500 text-white w-full py-2 rounded-xl text-sm">
+                购买
+              </button>
+            </div>
+          </div>
+
+          <div class="store-item">
+            <div class="relative">
+              <div class="store-item-image" style="background: linear-gradient(135deg, #E91E63, #C2185B);">
+                <i class="fas fa-heart" style="font-size: 20px; margin-right: 8px;"></i>
+                爱心蛇
+              </div>
+              <div class="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-lg text-xs">
+                新品
+              </div>
+            </div>
+            <div class="store-item-content">
+              <div class="flex justify-between items-center mb-2">
+                <h3 class="font-bold">爱心蛇</h3>
+                <div class="flex items-center">
+                  <i class="fas fa-coins coin-icon"></i>
+                  <span class="font-bold">1,000</span>
+                </div>
+              </div>
+              <button class="bg-green-500 text-white w-full py-2 rounded-xl text-sm">
+                购买
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 充值按钮 -->
+        <div class="mt-6">
+          <button class="w-full bg-blue-500 text-white py-3 rounded-xl font-semibold">
+            <i class="fas fa-plus-circle mr-2"></i>充值金币
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- iOS底部导航栏 -->
+    <div class="ios-tab-bar">
+      <div class="tab-item">
+        <i class="fas fa-home"></i>
+        <span>首页</span>
+      </div>
+      <div class="tab-item">
+        <i class="fas fa-trophy"></i>
+        <span>排行榜</span>
+      </div>
+      <div class="tab-item active">
+        <i class="fas fa-store"></i>
+        <span>商店</span>
+      </div>
+      <div class="tab-item">
+        <i class="fas fa-user-friends"></i>
+        <span>好友</span>
+      </div>
+      <div class="tab-item">
+        <i class="fas fa-user"></i>
+        <span>我的</span>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社交贪吃蛇 - 原型展示</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        .prototype-container {
+            width: 390px;
+            height: 844px;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            position: relative;
+            background-color: white;
+        }
+        .prototype-label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 18px;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body class="p-8">
+    <h1 class="text-3xl font-bold mb-8 text-center">社交贪吃蛇App - 原型界面</h1>
+    
+    <div class="flex flex-wrap justify-center">
+        <!-- 登录/注册界面 -->
+        <div class="flex flex-col items-center">
+            <div class="prototype-label">登录/注册界面</div>
+            <div class="prototype-container">
+                <iframe src="login.html"></iframe>
+            </div>
+        </div>
+        
+        <!-- 主页 -->
+        <div class="flex flex-col items-center">
+            <div class="prototype-label">主页</div>
+            <div class="prototype-container">
+                <iframe src="home.html"></iframe>
+            </div>
+        </div>
+        
+        <!-- 游戏界面 -->
+        <div class="flex flex-col items-center">
+            <div class="prototype-label">游戏界面</div>
+            <div class="prototype-container">
+                <iframe src="game.html"></iframe>
+            </div>
+        </div>
+        
+        <!-- 排行榜 -->
+        <div class="flex flex-col items-center">
+            <div class="prototype-label">排行榜</div>
+            <div class="prototype-container">
+                <iframe src="leaderboard.html"></iframe>
+            </div>
+        </div>
+        
+        <!-- 个人资料 -->
+        <div class="flex flex-col items-center">
+            <div class="prototype-label">个人资料</div>
+            <div class="prototype-container">
+                <iframe src="profile.html"></iframe>
+            </div>
+        </div>
+        
+        <!-- 好友系统 -->
+        <div class="flex flex-col items-center">
+            <div class="prototype-label">好友系统</div>
+            <div class="prototype-container">
+                <iframe src="friends.html"></iframe>
+            </div>
+        </div>
+        
+        <!-- 设置界面 -->
+        <div class="flex flex-col items-center">
+            <div class="prototype-label">设置界面</div>
+            <div class="prototype-container">
+                <iframe src="settings.html"></iframe>
+            </div>
+        </div>
+        
+        <!-- 商店 -->
+        <div class="flex flex-col items-center">
+            <div class="prototype-label">商店</div>
+            <div class="prototype-container">
+                <iframe src="store.html"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

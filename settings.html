@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设置 - 社交贪吃蛇</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/components.css">
+    <style>
+        .settings-group {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .settings-item {
+            padding: 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .settings-item:last-child {
+            border-bottom: none;
+        }
+        
+        .settings-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 12px;
+            color: white;
+        }
+        
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 28px;
+        }
+        
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 24px;
+            width: 24px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .toggle-slider {
+            background-color: #4CAF50;
+        }
+        
+        input:checked + .toggle-slider:before {
+            transform: translateX(22px);
+        }
+    </style>
+</head>
+<body>
+    <div class="iphone-container">
+        <!-- iOS状态栏 -->
+        <div class="ios-status-bar">
+            <div class="time">9:41</div>
+            <div class="right-icons">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+        
+        <div class="content-area p-4">
+            <h1 class="text-2xl font-bold mb-6">设置</h1>
+            
+            <!-- 账号设置 -->
+            <h2 class="text-lg font-semibold mb-2 px-2">账号</h2>
+            <div class="settings-group">
+                <div class="settings-item">
+                    <div class="flex items-center">
+                        <div class="settings-icon bg-blue-500">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span>个人资料</span>
+                    </div>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </div>
+                
+                <div class="settings-item">
+                    <div class="flex items-center">
+                        <div class="settings-icon bg-purple-500">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <span>通知设置</span>
+                    </div>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </div>
+                
+                <div class="settings-item">
+                    <div class="flex items-center">
+                        <div class="settings-icon bg-red-500">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <span>隐私设置</span>
+                    </div>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </div>
+            </div>
+            
+            <!-- 游戏设置 -->
+            <h2 class="text-lg font-semibold mb-2 px-2">游戏</h2>
+            <div class="settings-group">
+                <div class="settings-item">
+                    <div class="flex items-center">
+                        <div class="settings-icon bg-green-500">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <span>控制方式</span>
+                    </div>
+                    <div class="text-gray-500">滑动</div>
+                </div>
+                
+                <div class="settings-item">
+                    <div class="flex items-center">
+                        <div class="settings-icon bg-yellow-500">
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                        <span>音效</span>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                
+                <div class="settings-item">
+                    <div class="flex items-center">
+                        <div class="settings-icon bg-indigo-500">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <span>背景音乐</span>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                
+                <div class="settings-item">
+                    <div class="flex items-center">
+                        <div class="settings-icon bg-pink-500">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <span>主题设置</span>
+                    </div>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </div>
+            </div>
+            
+            <!-- 其他设置 -->
+            <h2 class="text-lg font-semibold mb-2 px-2">其他</h2>
+            <div class="settings-group">
+                <div class="settings-item">
+                    <div class="flex items-center">
+                        <div class="settings-icon bg-gray-500">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <span>帮助与反馈</span>
+                    </div>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </div>
+                
+                <div class="settings-item">
+                    <div class="flex items-center">
+                        <div class="settings-icon bg-blue-400">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <span>关于我们</span>
+                    </div>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </div>
+                
+                <div class="settings-item">
+                    <div class="flex items-center">
+                        <div class="settings-icon bg-orange-500">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>给我们评分</span>
+                    </div>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </div>
+            </div>
+            
+            <!-- 退出登录按钮 -->
+            <button class="w-full bg-red-500 text-white py-3 rounded-xl font-semibold mt-4">
+                退出登录
+            </button>
+            
+            <p class="text-center text-gray-500 text-sm mt-6">
+                社交贪吃蛇 v1.0.0
+            </p>
+        </div>
+    </div>
+</body>
+</html>

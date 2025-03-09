@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>好友 - 社交贪吃蛇</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .search-bar {
+      background-color: rgba(142, 142, 147, 0.12);
+      border-radius: 10px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-bar input {
+      background: transparent;
+      border: none;
+      flex: 1;
+      margin-left: 8px;
+      font-size: 16px;
+    }
+
+    .search-bar input:focus {
+      outline: none;
+    }
+
+    .tab-button {
+      padding: 10px 20px;
+      font-weight: 600;
+      color: #666;
+      border-bottom: 2px solid transparent;
+    }
+
+    .tab-button.active {
+      color: #4CAF50;
+      border-bottom: 2px solid #4CAF50;
+    }
+
+    .friend-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .friend-info {
+      flex: 1;
+      margin-left: 12px;
+    }
+
+    .online-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      border: 2px solid white;
+    }
+
+    .offline-indicator {
+      background-color: #9e9e9e;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="iphone-container">
+    <!-- iOS状态栏 -->
+    <div class="ios-status-bar">
+      <div class="time">9:41</div>
+      <div class="right-icons">
+        <i class="fas fa-signal"></i>
+        <i class="fas fa-wifi"></i>
+        <i class="fas fa-battery-full"></i>
+      </div>
+    </div>
+
+    <div class="content-area">
+      <!-- 顶部标题和搜索栏 -->
+      <div class="p-4">
+        <h1 class="text-2xl font-bold mb-4">好友</h1>
+
+        <div class="search-bar mb-4">
+          <i class="fas fa-search text-gray-400"></i>
+          <input type="text" placeholder="搜索好友">
+        </div>
+
+        <!-- 好友请求提示 -->
+        <div class="bg-blue-50 p-3 rounded-xl flex justify-between items-center mb-4">
+          <div class="flex items-center">
+            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-500 mr-3">
+              <i class="fas fa-user-plus"></i>
+            </div>
+            <div>
+              <p class="font-semibold text-blue-800">3个好友请求</p>
+              <p class="text-xs text-blue-600">查看并接受好友请求</p>
+            </div>
+          </div>
+          <i class="fas fa-chevron-right text-blue-400"></i>
+        </div>
+      </div>
+
+      <!-- 好友选项卡 -->
+      <div class="flex border-b">
+        <button class="tab-button active flex-1">好友</button>
+        <button class="tab-button flex-1">最近对战</button>
+        <button class="tab-button flex-1">附近玩家</button>
+      </div>
+
+      <!-- 好友列表 -->
+      <div class="bg-white">
+        <!-- 在线好友 -->
+        <div class="p-3 bg-gray-100">
+          <p class="text-sm font-semibold text-gray-500">在线好友 (3)</p>
+        </div>
+        <!-- 在线好友列表 -->
+        <div class="friend-item">
+          <div class="relative">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="用户头像" class="avatar-sm">
+            <div class="online-indicator"></div>
+          </div>
+          <div class="friend-info">
+            <h3 class="font-semibold">李小花</h3>
+            <p class="text-xs text-gray-500">正在玩经典模式</p>
+          </div>
+          <button class="bg-green-500 text-white px-3 py-1 rounded-full text-sm">
+            挑战
+          </button>
+        </div>
+
+        <div class="friend-item">
+          <div class="relative">
+            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="用户头像" class="avatar-sm">
+            <div class="online-indicator"></div>
+          </div>
+          <div class="friend-info">
+            <h3 class="font-semibold">王大锤</h3>
+            <p class="text-xs text-gray-500">在线</p>
+          </div>
+          <button class="bg-green-500 text-white px-3 py-1 rounded-full text-sm">
+            挑战
+          </button>
+        </div>
+
+        <div class="friend-item">
+          <div class="relative">
+            <img src="https://randomuser.me/api/portraits/women/17.jpg" alt="用户头像" class="avatar-sm">
+            <div class="online-indicator"></div>
+          </div>
+          <div class="friend-info">
+            <h3 class="font-semibold">张小丽</h3>
+            <p class="text-xs text-gray-500">正在商店</p>
+          </div>
+          <button class="bg-green-500 text-white px-3 py-1 rounded-full text-sm">
+            挑战
+          </button>
+        </div>
+
+        <!-- 离线好友 -->
+        <div class="p-3 bg-gray-100">
+          <p class="text-sm font-semibold text-gray-500">离线好友 (12)</p>
+        </div>
+
+        <!-- 离线好友列表 -->
+        <div class="friend-item">
+          <div class="relative">
+            <img src="https://randomuser.me/api/portraits/men/91.jpg" alt="用户头像" class="avatar-sm">
+            <div class="online-indicator offline-indicator"></div>
+          </div>
+          <div class="friend-info">
+            <h3 class="font-semibold">刘备</h3>
+            <p class="text-xs text-gray-500">3小时前在线</p>
+          </div>
+          <button class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full text-sm">
+            邀请
+          </button>
+        </div>
+
+        <div class="friend-item">
+          <div class="relative">
+            <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="用户头像" class="avatar-sm">
+            <div class="online-indicator offline-indicator"></div>
+          </div>
+          <div class="friend-info">
+            <h3 class="font-semibold">赵云</h3>
+            <p class="text-xs text-gray-500">5小时前在线</p>
+          </div>
+          <button class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full text-sm">
+            邀请
+          </button>
+        </div>
+
+        <div class="friend-item">
+          <div class="relative">
+            <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="用户头像" class="avatar-sm">
+            <div class="online-indicator offline-indicator"></div>
+          </div>
+          <div class="friend-info">
+            <h3 class="font-semibold">关羽</h3>
+            <p class="text-xs text-gray-500">昨天在线</p>
+          </div>
+          <button class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full text-sm">
+            邀请
+          </button>
+        </div>
+
+        <div class="friend-item">
+          <div class="relative">
+            <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="用户头像" class="avatar-sm">
+            <div class="online-indicator offline-indicator"></div>
+          </div>
+          <div class="friend-info">
+            <h3 class="font-semibold">貂蝉</h3>
+            <p class="text-xs text-gray-500">2天前在线</p>
+          </div>
+          <button class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full text-sm">
+            邀请
+          </button>
+        </div>
+      </div>
+
+      <!-- 添加好友浮动按钮 -->
+      <div class="fixed bottom-24 right-6">
+        <button
+          class="w-14 h-14 bg-green-500 rounded-full shadow-lg flex items-center justify-center text-white text-2xl">
+          <i class="fas fa-user-plus"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- iOS底部导航栏 -->
+    <div class="ios-tab-bar">
+      <div class="tab-item">
+        <i class="fas fa-home"></i>
+        <span>首页</span>
+      </div>
+      <div class="tab-item">
+        <i class="fas fa-trophy"></i>
+        <span>排行榜</span>
+      </div>
+      <div class="tab-item">
+        <i class="fas fa-store"></i>
+        <span>商店</span>
+      </div>
+      <div class="tab-item active">
+        <i class="fas fa-user-friends"></i>
+        <span>好友</span>
+      </div>
+      <div class="tab-item">
+        <i class="fas fa-user"></i>
+        <span>我的</span>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

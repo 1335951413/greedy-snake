@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排行榜 - 社交贪吃蛇</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/components.css">
+    <style>
+        .tab-button {
+            padding: 10px 20px;
+            font-weight: 600;
+            color: #666;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .tab-button.active {
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+        }
+        
+        .rank-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .rank-number {
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin-right: 12px;
+        }
+        
+        .rank-1 {
+            background-color: #FFD700;
+            color: white;
+        }
+        
+        .rank-2 {
+            background-color: #C0C0C0;
+            color: white;
+        }
+        
+        .rank-3 {
+            background-color: #CD7F32;
+            color: white;
+        }
+        
+        .user-info {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+        
+        .score {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div class="iphone-container">
+        <!-- iOS状态栏 -->
+        <div class="ios-status-bar">
+            <div class="time">9:41</div>
+            <div class="right-icons">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+        
+        <div class="content-area">
+            <!-- 顶部标题 -->
+            <div class="p-4 pb-0">
+                <h1 class="text-2xl font-bold">排行榜</h1>
+                <p class="text-gray-600">查看全球玩家和好友的排名</p>
+            </div>
+            
+            <!-- 排行榜选项卡 -->
+            <div class="flex border-b mt-4">
+                <button class="tab-button active flex-1">全球</button>
+                <button class="tab-button flex-1">好友</button>
+                <button class="tab-button flex-1">每周</button>
+            </div>
+            
+            <!-- 游戏模式选择 -->
+            <div class="p-4">
+                <select class="w-full p-3 bg-gray-100 rounded-xl">
+                    <option>经典模式</option>
+                    <option>闪电模式</option>
+                    <option>计时模式</option>
+                    <option>多人对战</option>
+                </select>
+            </div>
+            
+            <!-- 排行榜列表 -->
+            <div class="bg-white rounded-t-xl">
+                <!-- 第1名 -->
+                <div class="rank-item">
+                    <div class="rank-number rank-1">1</div>
+                    <div class="user-info">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="用户头像" class="avatar-sm mr-3">
+                        <div>
+                            <h3 class="font-semibold">蛇王至尊</h3>
+                            <p class="text-xs text-gray-500">中国</p>
+                        </div>
+                    </div>
+                    <div class="score">1,245</div>
+                </div>
+                
+                <!-- 第2名 -->
+                <div class="rank-item">
+                    <div class="rank-number rank-2">2</div>
+                    <div class="user-info">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="用户头像" class="avatar-sm mr-3">
+                        <div>
+                            <h3 class="font-semibold">李小花</h3>
+                            <p class="text-xs text-gray-500">中国</p>
+                        </div>
+                    </div>
+                    <div class="score">1,187</div>
+                </div>
+                
+                <!-- 第3名 -->
+                <div class="rank-item">
+                    <div class="rank-number rank-3">3</div>
+                    <div class="user-info">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="用户头像" class="avatar-sm mr-3">
+                        <div>
+                            <h3 class="font-semibold">王大锤</h3>
+                            <p class="text-xs text-gray-500">中国</p>
+                        </div>
+                    </div>
+                    <div class="score">1,056</div>
+                </div>
+                
+                <!-- 第4名 -->
+                <div class="rank-item">
+                    <div class="rank-number">4</div>
+                    <div class="user-info">
+                        <img src="https://randomuser.me/api/portraits/women/17.jpg" alt="用户头像" class="avatar-sm mr-3">
+                        <div>
+                            <h3 class="font-semibold">张小丽</h3>
+                            <p class="text-xs text-gray-500">中国</p>
+                        </div>
+                    </div>
+                    <div class="score">987</div>
+                </div>
+                
+                <!-- 第5名 -->
+                <div class="rank-item">
+                    <div class="rank-number">5</div>
+                    <div class="user-info">
+                        <img src="https://randomuser.me/api/portraits/men/91.jpg" alt="用户头像" class="avatar-sm mr-3">
+                        <div>
+                            <h3 class="font-semibold">刘备</h3>
+                            <p class="text-xs text-gray-500">中国</p>
+                        </div>
+                    </div>
+                    <div class="score">932</div>
+                </div>
+                
+                <!-- 第6名 -->
+                <div class="rank-item">
+                    <div class="rank-number">6</div>
+                    <div class="user-info">
+                        <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="用户头像" class="avatar-sm mr-3">
+                        <div>
+                            <h3 class="font-semibold">赵云</h3>
+                            <p class="text-xs text-gray-500">中国</p>
+                        </div>
+                    </div>
+                    <div class="score">876</div>
+                </div>
+                
+                <!-- 第7名 -->
+                <div class="rank-item">
+                    <div class="rank-number">7</div>
+                    <div class="user-info">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="用户头像" class="avatar-sm mr-3">
+                        <div>
+                            <h3 class="font-semibold">关羽</h3>
+                            <p class="text-xs text-gray-500">中国</p>
+                        </div>
+                    </div>
+                    <div class="score">854</div>
+                </div>
+                
+                <!-- 第8名 -->
+                <div class="rank-item">
+                    <div class="rank-number">8</div>
+                    <div class="user-info">
+                        <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="用户头像" class="avatar-sm mr-3">
+                        <div>
+                            <h3 class="font-semibold">貂蝉</h3>
+                            <p class="text-xs text-gray-500">中国</p>
+                        </div>
+                    </div>
+                    <div class="score">821</div>
+                </div>
+                
+                <!-- 我的排名 -->
+                <div class="mt-4 p-4 bg-gray-100">
+                    <div class="rank-item bg-white rounded-xl">
+                        <div class="rank-number">24</div>
+                        <div class="user-info">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="用户头像" class="avatar-sm mr-3">
+                            <div>
+                                <h3 class="font-semibold">小蛇王</h3>
+                                <p class="text-xs text-gray-500">中国</p>
+                            </div>
+                        </div>
+                        <div class="score">632</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- iOS底部导航栏 -->
+        <div class="ios-tab-bar">
+            <div class="tab-item">
+                <i class="fas fa-home"></i>
+                <span>首页</span>
+            </div>
+            <div class="tab-item active">
+                <i class="fas fa-trophy"></i>
+                <span>排行榜</span>
+            </div>
+            <div class="tab-item">
+                <i class="fas fa-store"></i>
+                <span>商店</span>
+            </div>
+            <div class="tab-item">
+                <i class="fas fa-user-friends"></i>
+                <span>好友</span>
+            </div>
+            <div class="tab-item">
+                <i class="fas fa-user"></i>
+                <span>我的</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
