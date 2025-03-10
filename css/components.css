@@ -1,22 +1,29 @@
 /* 通用组件样式 */
+body {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* iPhone容器 */
 .iphone-container {
     width: 375px;
     height: 812px;
-    background-color: #f8f8f8;
+    background-color: white;
     border-radius: 40px;
     overflow: hidden;
     position: relative;
     margin: 20px auto;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    border: 10px solid #000;
+    border: none;
 }
 
 /* iOS状态栏 */
 .ios-status-bar {
     height: 44px;
-    background-color: #f8f8f8;
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,8 +41,9 @@
 
 /* 内容区域 */
 .content-area {
-    height: calc(100% - 83px);
+    height: calc(100vh - 130px);
     overflow-y: auto;
+    padding-bottom: 83px;
 }
 
 /* iOS底部导航栏 */

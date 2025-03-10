@@ -10,41 +10,93 @@
   <link rel="stylesheet" href="css/components.css">
   <style>
     .profile-header {
-      background: linear-gradient(135deg, #4CAF50, #2E7D32);
-      padding: 30px 20px;
+      background: linear-gradient(135deg, #4CAF50, #2196F3, #9C27B0);
+      padding: 40px 24px;
       color: white;
       border-radius: 0 0 30px 30px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 107%, rgba(156, 39, 176, 0.15) 0%, rgba(33, 150, 243, 0.05) 55%, rgba(76, 175, 80, 0) 70%);
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
     }
 
     .stats-card {
-      background-color: white;
-      border-radius: 16px;
-      padding: 16px;
-      margin-top: -40px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 24px;
+      margin: -40px 16px 20px;
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      transition: transform 0.3s ease;
+    }
+
+    .stats-card:hover {
+      transform: translateY(-5px);
     }
 
     .achievement {
-      background-color: white;
-      border-radius: 12px;
-      padding: 16px;
-      margin-bottom: 12px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(5px);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
       display: flex;
       align-items: center;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      transition: all 0.3s ease;
+    }
+
+    .achievement:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
     }
 
     .achievement-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 25px;
-      background-color: #f0f0f0;
+      width: 60px;
+      height: 60px;
+      border-radius: 30px;
+      background: linear-gradient(145deg, #9C27B0, #2196F3);
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-right: 16px;
-      color: #4CAF50;
-      font-size: 24px;
+      margin-right: 20px;
+      color: white;
+      font-size: 28px;
+      box-shadow: 0 4px 15px rgba(156, 39, 176, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .achievement:hover .achievement-icon {
+      transform: rotate(15deg);
     }
 
     .achievement-info {
@@ -53,16 +105,29 @@
 
     .achievement-progress {
       width: 100%;
-      height: 6px;
-      background-color: #f0f0f0;
-      border-radius: 3px;
-      margin-top: 8px;
+      height: 8px;
+      background-color: rgba(240, 240, 240, 0.5);
+      border-radius: 4px;
+      margin-top: 10px;
       overflow: hidden;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
     }
 
     .achievement-bar {
       height: 100%;
-      background-color: #4CAF50;
+      background: linear-gradient(90deg, #9C27B0, #2196F3);
+      box-shadow: 0 1px 3px rgba(33, 150, 243, 0.3);
+      animation: progressAnimation 1.5s ease-out;
+    }
+
+    @keyframes progressAnimation {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -83,18 +148,19 @@
       <!-- 个人资料头部 -->
       <div class="profile-header">
         <div class="flex items-center">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="用户头像" class="avatar-lg mr-4">
+          <div class="avatar-lg bg-green-500 text-white rounded-full flex items-center justify-center mr-6">蛇王</div>
           <div>
-            <h1 class="text-2xl font-bold">小蛇王</h1>
-            <p class="text-sm opacity-80">ID: snake_master_888</p>
-            <div class="flex items-center mt-2">
+            <h1 class="text-3xl font-bold mb-1">小蛇王</h1>
+            <p class="text-sm opacity-80 mb-3">ID: snake_master_888</p>
+            <div class="flex items-center gap-2">
               <span class="bg-white bg-opacity-20 text-sm px-2 py-1 rounded-full mr-2">Lv.28</span>
               <span class="bg-white bg-opacity-20 text-sm px-2 py-1 rounded-full">蛇王称号</span>
             </div>
           </div>
         </div>
 
-        <button class="mt-4 bg-white bg-opacity-20 w-full py-2 rounded-full">
+        <button
+          class="mt-8 bg-white bg-opacity-20 w-full py-3 rounded-full text-sm font-medium hover:bg-opacity-30 transition-all">
           <i class="fas fa-edit mr-2"></i>编辑个人资料
         </button>
       </div>
@@ -105,11 +171,43 @@
           <h2 class="text-lg font-bold mb-4">游戏统计</h2>
           <div class="grid grid-cols-3 gap-4">
             <div class="text-center">
-              <div class="text-2xl font-bold text-green-600">1,245</div>
+              <div class="text-2xl font-bold text-blue-600">1,245</div>
               <div class="text-sm text-gray-500">最高分</div>
             </div>
             <div class="text-center">
-              <div class="text-2xl font-bold text-green-600">632</div>
+              <div class="text-2xl font-bold text-green-600">87</div>
+              <div class="text-sm text-gray-500">游戏局数</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-purple-600">28</div>
+              <div class="text-sm text-gray-500">等级</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-yellow-600">15</div>
+              <div class="text-sm text-gray-500">好友数</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-red-600">8</div>
+              <div class="text-sm text-gray-500">连胜</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-indigo-600">12</div>
+              <div class="text-sm text-gray-500">获得成就</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="px-4 mt-4">
+        <div class="stats-card">
+          <h2 class="text-lg font-bold mb-4">详细数据</h2>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="text-center">
+              <div class="text-2xl font-bold text-blue-600">1,245</div>
+              <div class="text-sm text-gray-500">最高分</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-teal-600">632</div>
               <div class="text-sm text-gray-500">平均分</div>
             </div>
             <div class="text-center">
@@ -117,20 +215,20 @@
               <div class="text-sm text-gray-500">游戏次数</div>
             </div>
             <div class="text-center">
-              <div class="text-2xl font-bold text-green-600">24</div>
+              <div class="text-2xl font-bold text-orange-600">24</div>
               <div class="text-sm text-gray-500">全球排名</div>
             </div>
             <div class="text-center">
-              <div class="text-2xl font-bold text-green-600">3</div>
+              <div class="text-2xl font-bold text-pink-600">3</div>
               <div class="text-sm text-gray-500">好友排名</div>
             </div>
             <div class="text-center">
-              <div class="text-2xl font-bold text-green-600">12</div>
+              <div class="text-2xl font-bold text-indigo-600">12</div>
               <div class="text-sm text-gray-500">获得成就</div>
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- 成就系统 -->
       <div class="p-4">

@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class="mb-4">
                         <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl mb-3">
                             <div class="flex items-center">
-                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="用户头像" class="avatar-sm mr-3">
+                                <img src="https://randomuser.me/api/portraits/men/43.jpg" alt="用户头像" class="avatar-sm mr-3">
                                 <div>
                                     <h3 class="font-semibold">张三</h3>
                                     <p class="text-xs text-gray-500">2小时前</p>
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         
                         <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl mb-3">
                             <div class="flex items-center">
-                                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="用户头像" class="avatar-sm mr-3">
+                                <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="用户头像" class="avatar-sm mr-3">
                                 <div>
                                     <h3 class="font-semibold">李四</h3>
                                     <p class="text-xs text-gray-500">昨天</p>
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         
                         <div class="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
                             <div class="flex items-center">
-                                <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="用户头像" class="avatar-sm mr-3">
+                                <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="用户头像" class="avatar-sm mr-3">
                                 <div>
                                     <h3 class="font-semibold">王五</h3>
                                     <p class="text-xs text-gray-500">2天前</p>
