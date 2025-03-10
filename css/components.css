@@ -34,7 +34,7 @@
 
 /* 内容区域 */
 .content-area {
-    height: calc(100% - 44px - 83px);
+    height: calc(100% - 83px);
     overflow-y: auto;
 }
 
